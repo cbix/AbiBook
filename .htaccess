@@ -1,0 +1,13 @@
+# AuthType Basic
+# AuthName "Globales Passwort?"
+# AuthUserFile .htpasswd
+# Require user secret
+
+RewriteEngine on
+RewriteBase /
+RewriteRule ^\/$ index.php
+RewriteRule ^login\/?$ index.php?page=login
+RewriteRule ^user\/([0-9a-zA-Z\-]{3,32})\/?$ index.php?page=user&name=$1
+RewriteRule ^logout\/?$ index.php?page=logout
+RewriteRule ^register\/?$ index.php?page=register
+RewriteRule ^newest\/?$ index.php?page=lastComments
